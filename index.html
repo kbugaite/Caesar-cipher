@@ -9,25 +9,35 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-<div>
-    <h1>Caeser Cipher</h1>
+    <h1>CAESER CIPHER</h1>
+    <div class="formContainer">
     <form id="ceaserCipher" >
-        <label for="userMessage">Message to encrypt:</label>
-        <textarea type="text" name="text" id="userMessage"></textarea>
-            <br>
+            <div class="row">
+            <label for="userMessage"></label>
+            <textarea type="text" name="text" id="userMessage" placeholder="Your message to encrypt"></textarea>
+            </div>
+        <div class="row">
+            <div class="column">
             <label for="encode">Encode:</label>
-            <input id="encode" type="radio" name="cipherRadioBtn" checked="" onchange="caesarCipher()">
+            <input id="encode" type="radio" name="cipherRadioBtn" checked="">
+            </div>
+            <div class="column">
             <label for="decode">Decode:</label>
-            <input id="decode" type="radio" name="cipherRadioBtn" onchange="caesarCipher()">
-            <br>
+            <input id="decode" type="radio" name="cipherRadioBtn">
+            </div>
+            <div class="column">
             <label for="userKey">Key:</label>
-            <input type="number" name="key" id="userKey" min="0" value="1" onchange="caesarCipher()">
-            <br>
+            <input type="number" name="key" id="userKey" min="0" value="1">
+            </div>
+        </div>
+            <div class="row">
         <label for="output">
-            <br>
-            Output:
         </label>
-        <textarea id="output"></textarea>
+        <textarea id="output" placeholder ="Message output"></textarea>
+        </div>
+        <div class="row">
+        <button type="button" id="cipherBtn">Encode/Decode</button>
+        </div>
     </form>
 </div>
 </body>

@@ -1,7 +1,8 @@
 // let input = "Abcde!";
 // let userKey = 5;
 // userKey = userKey % 26;
-function caesarCipher() {
+const btn = document.querySelector('#cipherBtn')
+btn.addEventListener("click", () => {
 
 let input = document.getElementById("userMessage").value;
 let userKey = document.getElementById("userKey").value;
@@ -13,9 +14,6 @@ let decryptedInput = "";
 document.getElementById("output").value = encryptedInput;
 
 function encrypt(input, userKey) { 
-    let input = document.getElementById("userMessage").value;
-    let userKey = document.getElementById("userKey").value;
-
 for (let i = 0; i < input.length; i++) {
     let character = input.charAt(i);
     let characterCode = input.charCodeAt(i);
@@ -36,7 +34,7 @@ for (let i = 0; i < input.length; i++) {
     }
     }
 
-return "Encrypted value is: " + encryptedInput;
+return encryptedInput;
 
 }
 
@@ -55,7 +53,13 @@ for (let i = 0; i < input.length; i++) {
     }
 }
 
-    return "Decrypted value is: " + decryptedInput;
+    return decryptedInput;
 }
 
+if (document.getElementById("encode").checked && input !== "") {
+    document.getElementById("output").value = encrypt(input, userKey);
+} else {
+    document.getElementById("output").value = decrypt(input, userKey);
+    console.log("Decrypted value is: " + decryptedInput)
 }
+});
