@@ -22,11 +22,11 @@ for (let i = 0; i < input.length; i++) {
         let shiftCharacter = characterCode + userKey;
 
         if(character === character.toLowerCase()) {
-            if(shiftCharacter < 97) {
-                shiftCharacter += 26;
-            }
-        } else if (shiftCharacter > 122) {
+            if(shiftCharacter > 122) {
                 shiftCharacter -= 26;
+            }
+        } else if (shiftCharacter <= 90) {
+                shiftCharacter += 32;
             }
         encryptedInput += String.fromCharCode(shiftCharacter);
     } else {
